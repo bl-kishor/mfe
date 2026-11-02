@@ -24,7 +24,9 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = Array.from({ length: 9 }, () =>
+  Math.random().toString(36).slice(2)
+);
 
 export default function Album() {
   return (
@@ -82,7 +84,7 @@ export default function Album() {
                 >
                   <CardMedia
                     sx={{ pt: '56.25%' }}
-                    image="https://source.unsplash.com/random"
+                    image={`https://picsum.photos/seed/${card}/800/450`}
                     title="Image title"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
